@@ -11,21 +11,6 @@
 
 @implementation NextStage
 
-+(CCScene *) scene
-{
-	// 'scene' is an autorelease object.
-	CCScene *scene = [CCScene node];
-	
-	// 'layer' is an autorelease object.
-	NextStage *layer = [NextStage node];
-	
-	// add layer as a child to scene
-	[scene addChild: layer];
-	
-	// return the scene
-	return scene;
-}
-
 -(id)init {
     if (self = [super initWithColor:ccc4(255,255,255,255)]) {
         

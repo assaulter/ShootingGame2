@@ -24,6 +24,4 @@
     CGPoint _touchLocation;
 }
 
-+(CCScene *) scene;
-
 @end

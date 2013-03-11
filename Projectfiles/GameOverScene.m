@@ -12,21 +12,6 @@
 
 @implementation GameOverScene
 
-// Helper class method that creates a Scene with the HelloWorldLayer as the only child.
-+(CCScene *) scene {
-	// 'scene' is an autorelease object.
-	CCScene *scene = [CCScene node];
-	
-	// 'layer' is an autorelease object.
-	GameOverScene *layer = [GameOverScene node];
-	
-	// add layer as a child to scene
-	[scene addChild: layer];
-	
-	// return the scene
-	return scene;
-}
-
 -(id)init {
     if (self = [super init]) {
         [CCMenuItemFont setFontSize:20];
@@ -41,7 +26,7 @@
 }
 
 - (void)backToTitle:(id)sender {
-    CCTransitionFade *tran = [CCTransitionFade transitionWithDuration:1.0 scene:[MainScene scene] withColor:ccc3(255, 255, 255)];
+    CCTransitionFade *tran = [CCTransitionFade transitionWithDuration:1.0 scene:[MainScene nodeWithScene] withColor:ccc3(255, 255, 255)];
     [[CCDirector sharedDirector] replaceScene:tran];
 }
 

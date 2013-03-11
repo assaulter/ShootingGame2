@@ -12,21 +12,6 @@
 
 @implementation MainScene
 
-// Helper class method that creates a Scene with the HelloWorldLayer as the only child.
-+(CCScene *) scene {
-	// 'scene' is an autorelease object.
-	CCScene *scene = [CCScene node];
-	
-	// 'layer' is an autorelease object.
-	MainScene *layer = [MainScene node];
-	
-	// add layer as a child to scene
-	[scene addChild: layer];
-	
-	// return the scene
-	return scene;
-}
-
 -(id)init {
     if (self = [super init]) {
         [CCMenuItemFont setFontSize:20];
@@ -40,9 +25,8 @@
     return self;
 }
 
-- (void)startGame:(id)sender
-{
-    CCTransitionFade *tran = [CCTransitionFade transitionWithDuration:1.0 scene:[GameScene scene] withColor:ccc3(255, 255, 255)];
+- (void)startGame:(id)sender {
+    CCTransitionFade *tran = [CCTransitionFade transitionWithDuration:1.0 scene:[GameScene nodeWithScene] withColor:ccc3(255, 255, 255)];
     //GameSceneから頻繁に行き来することはないので、replaceScene(メモリから破棄する。)
     [[CCDirector sharedDirector] replaceScene:tran];
 }
