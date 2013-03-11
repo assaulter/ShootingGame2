@@ -11,7 +11,6 @@
 #import "ParallelPattern.h"
 #import "NormalPattern.h"
 #import "ThreeWayPattern.h"
-#import "CollisionDetector.h"
 #import "NextStage.h"
 #import "GameOverScene.h"
 
@@ -64,7 +63,7 @@
     Player *player = _playerLayer.player;
     // itemとplayerの当たり判定
     for (Item *item in _itemLayer.items) {
-        if ([CollisionDetector isCollided:player item:item]) {
+        if ([player intersectsNode:item]) {
             [spritesToDelete addObject:item];
             // playerの状態を変化させる。
             [self changeBulletPattern:item.type];
@@ -73,7 +72,7 @@
     // 敵と弾の当たり判定
     for (CCSprite *enemy in _enemyLayer.enemies) {
         for (CCSprite *bullet in _playerLayer.bullets) {
-            if ([CollisionDetector isCollided:enemy sprite:bullet]) {
+            if ([enemy intersectsNode:bullet]) {
                 [spritesToDelete addObject:enemy];
                 [spritesToDelete addObject:bullet];
                 [_itemLayer addItemWithEnemyPosition:enemy.position];
@@ -82,7 +81,7 @@
     }
     // bossとの当たり判定
     Boss *boss = _bossLayer.boss;
-    if ([CollisionDetector isCollided:player sprite:boss]) {
+    if ([boss intersectsNode:player]) {
         [self goToGameOverScene];
     }
     // あたったやつは削除

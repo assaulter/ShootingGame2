@@ -41,8 +41,6 @@
 		36B006E816EDE10600BFC01F /* Player.m in Sources */ = {isa = PBXBuildFile; fileRef = 36B006DA16EDE10600BFC01F /* Player.m */; };
 		36B006E916EDE10600BFC01F /* SpriteTag.m in Sources */ = {isa = PBXBuildFile; fileRef = 36B006DC16EDE10600BFC01F /* SpriteTag.m */; };
 		36B006EA16EDE10600BFC01F /* SpriteTag.m in Sources */ = {isa = PBXBuildFile; fileRef = 36B006DC16EDE10600BFC01F /* SpriteTag.m */; };
-		36B006EE16EDE12300BFC01F /* CollisionDetector.m in Sources */ = {isa = PBXBuildFile; fileRef = 36B006ED16EDE12300BFC01F /* CollisionDetector.m */; };
-		36B006EF16EDE12300BFC01F /* CollisionDetector.m in Sources */ = {isa = PBXBuildFile; fileRef = 36B006ED16EDE12300BFC01F /* CollisionDetector.m */; };
 		36B006F816EDE14300BFC01F /* NormalPattern.m in Sources */ = {isa = PBXBuildFile; fileRef = 36B006F316EDE14300BFC01F /* NormalPattern.m */; };
 		36B006F916EDE14300BFC01F /* NormalPattern.m in Sources */ = {isa = PBXBuildFile; fileRef = 36B006F316EDE14300BFC01F /* NormalPattern.m */; };
 		36B006FA16EDE14300BFC01F /* ParallelPattern.m in Sources */ = {isa = PBXBuildFile; fileRef = 36B006F516EDE14300BFC01F /* ParallelPattern.m */; };
@@ -147,8 +145,6 @@
 		36B006DA16EDE10600BFC01F /* Player.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Player.m; sourceTree = "<group>"; };
 		36B006DB16EDE10600BFC01F /* SpriteTag.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpriteTag.h; sourceTree = "<group>"; };
 		36B006DC16EDE10600BFC01F /* SpriteTag.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpriteTag.m; sourceTree = "<group>"; };
-		36B006EC16EDE12300BFC01F /* CollisionDetector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollisionDetector.h; sourceTree = "<group>"; };
-		36B006ED16EDE12300BFC01F /* CollisionDetector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollisionDetector.m; sourceTree = "<group>"; };
 		36B006F116EDE14300BFC01F /* BulletPattern.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BulletPattern.h; sourceTree = "<group>"; };
 		36B006F216EDE14300BFC01F /* NormalPattern.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NormalPattern.h; sourceTree = "<group>"; };
 		36B006F316EDE14300BFC01F /* NormalPattern.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NormalPattern.m; sourceTree = "<group>"; };
@@ -312,8 +308,6 @@
 		36B006EB16EDE11200BFC01F /* Logic */ = {
 			isa = PBXGroup;
 			children = (
-				36B006EC16EDE12300BFC01F /* CollisionDetector.h */,
-				36B006ED16EDE12300BFC01F /* CollisionDetector.m */,
 			);
 			name = Logic;
 			sourceTree = "<group>";
@@ -616,7 +610,6 @@
 				36B006E516EDE10600BFC01F /* Item.m in Sources */,
 				36B006E716EDE10600BFC01F /* Player.m in Sources */,
 				36B006E916EDE10600BFC01F /* SpriteTag.m in Sources */,
-				36B006EE16EDE12300BFC01F /* CollisionDetector.m in Sources */,
 				36B006F816EDE14300BFC01F /* NormalPattern.m in Sources */,
 				36B006FA16EDE14300BFC01F /* ParallelPattern.m in Sources */,
 				36B006FC16EDE14300BFC01F /* ThreeWayPattern.m in Sources */,
@@ -646,7 +639,6 @@
 				36B006E616EDE10600BFC01F /* Item.m in Sources */,
 				36B006E816EDE10600BFC01F /* Player.m in Sources */,
 				36B006EA16EDE10600BFC01F /* SpriteTag.m in Sources */,
-				36B006EF16EDE12300BFC01F /* CollisionDetector.m in Sources */,
 				36B006F916EDE14300BFC01F /* NormalPattern.m in Sources */,
 				36B006FB16EDE14300BFC01F /* ParallelPattern.m in Sources */,
 				36B006FD16EDE14300BFC01F /* ThreeWayPattern.m in Sources */,
