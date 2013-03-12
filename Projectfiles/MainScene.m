@@ -9,6 +9,8 @@
 #import "MainScene.h"
 #import "GameScene.h"
 
+#import "MyCocos2DClass.h"
+
 
 @implementation MainScene
 
@@ -26,7 +28,11 @@
 }
 
 - (void)startGame:(id)sender {
-    CCTransitionFade *tran = [CCTransitionFade transitionWithDuration:1.0 scene:[GameScene nodeWithScene] withColor:ccc3(255, 255, 255)];
+//    CCTransitionFade *tran = [CCTransitionFade transitionWithDuration:1.0 scene:[GameScene nodeWithScene] withColor:ccc3(255, 255, 255)];
+//    //GameSceneから頻繁に行き来することはないので、replaceScene(メモリから破棄する。)
+//    [[CCDirector sharedDirector] replaceScene:tran];
+    
+    CCTransitionFade *tran = [CCTransitionFade transitionWithDuration:1.0 scene:[MyCocos2DClass nodeWithScene] withColor:ccc3(255, 255, 255)];
     //GameSceneから頻繁に行き来することはないので、replaceScene(メモリから破棄する。)
     [[CCDirector sharedDirector] replaceScene:tran];
 }
