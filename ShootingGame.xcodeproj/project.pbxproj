@@ -8,7 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		360142D116EF614000250F4B /* stage1.png in Resources */ = {isa = PBXBuildFile; fileRef = 360142CF16EF614000250F4B /* stage1.png */; };
-		360142D216EF614000250F4B /* stage1.tmx in Resources */ = {isa = PBXBuildFile; fileRef = 360142D016EF614000250F4B /* stage1.tmx */; };
+		360142D516EF638000250F4B /* BackGround.m in Sources */ = {isa = PBXBuildFile; fileRef = 360142D416EF638000250F4B /* BackGround.m */; };
+		360142E816F0052D00250F4B /* scrollSample.tmx in Resources */ = {isa = PBXBuildFile; fileRef = 360142E716F0052D00250F4B /* scrollSample.tmx */; };
 		36B006A516EDDEE800BFC01F /* MainScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 36B006A416EDDEE800BFC01F /* MainScene.m */; };
 		36B006A616EDDEE800BFC01F /* MainScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 36B006A416EDDEE800BFC01F /* MainScene.m */; };
 		36B006AB16EDE08B00BFC01F /* GameOverScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 36B006A816EDE08B00BFC01F /* GameOverScene.m */; };
@@ -69,7 +70,6 @@
 		36B0071916EDE21500BFC01F /* Target4.png in Resources */ = {isa = PBXBuildFile; fileRef = 36B0070616EDE21500BFC01F /* Target4.png */; };
 		36B0071A16EDE21500BFC01F /* Threeway.png in Resources */ = {isa = PBXBuildFile; fileRef = 36B0070716EDE21500BFC01F /* Threeway.png */; };
 		36B0071B16EDE21500BFC01F /* Threeway.png in Resources */ = {isa = PBXBuildFile; fileRef = 36B0070716EDE21500BFC01F /* Threeway.png */; };
-		36C408BD16EF034B00536C2F /* MyCocos2DClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 36C408BC16EF034B00536C2F /* MyCocos2DClass.m */; };
 		DC21B88B1511078F00FD4891 /* fps_images-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = DC21B8881511078F00FD4891 /* fps_images-hd.png */; };
 		DC21B88C1511078F00FD4891 /* fps_images-ipadhd.png in Resources */ = {isa = PBXBuildFile; fileRef = DC21B8891511078F00FD4891 /* fps_images-ipadhd.png */; };
 		DC21B88D1511078F00FD4891 /* fps_images.png in Resources */ = {isa = PBXBuildFile; fileRef = DC21B88A1511078F00FD4891 /* fps_images.png */; };
@@ -113,7 +113,9 @@
 
 /* Begin PBXFileReference section */
 		360142CF16EF614000250F4B /* stage1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stage1.png; sourceTree = "<group>"; };
-		360142D016EF614000250F4B /* stage1.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = stage1.tmx; sourceTree = "<group>"; };
+		360142D316EF638000250F4B /* BackGround.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BackGround.h; sourceTree = "<group>"; };
+		360142D416EF638000250F4B /* BackGround.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BackGround.m; sourceTree = "<group>"; };
+		360142E716F0052D00250F4B /* scrollSample.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = scrollSample.tmx; sourceTree = "<group>"; };
 		36B006A316EDDEE800BFC01F /* MainScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainScene.h; sourceTree = "<group>"; };
 		36B006A416EDDEE800BFC01F /* MainScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainScene.m; sourceTree = "<group>"; };
 		36B006A716EDE08B00BFC01F /* GameOverScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameOverScene.h; sourceTree = "<group>"; };
@@ -167,8 +169,6 @@
 		36B0070516EDE21500BFC01F /* Target3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Target3.png; sourceTree = "<group>"; };
 		36B0070616EDE21500BFC01F /* Target4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Target4.png; sourceTree = "<group>"; };
 		36B0070716EDE21500BFC01F /* Threeway.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Threeway.png; sourceTree = "<group>"; };
-		36C408BB16EF034B00536C2F /* MyCocos2DClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyCocos2DClass.h; sourceTree = "<group>"; };
-		36C408BC16EF034B00536C2F /* MyCocos2DClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyCocos2DClass.m; sourceTree = "<group>"; };
 		DC21B8881511078F00FD4891 /* fps_images-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "fps_images-hd.png"; sourceTree = "<group>"; };
 		DC21B8891511078F00FD4891 /* fps_images-ipadhd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "fps_images-ipadhd.png"; sourceTree = "<group>"; };
 		DC21B88A1511078F00FD4891 /* fps_images.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fps_images.png; sourceTree = "<group>"; };
@@ -287,8 +287,8 @@
 				36B006BF16EDE0E100BFC01F /* PlayerLayer.h */,
 				36B006C016EDE0E100BFC01F /* PlayerLayer.m */,
 				36B006C116EDE0E100BFC01F /* Subject.h */,
-				36C408BB16EF034B00536C2F /* MyCocos2DClass.h */,
-				36C408BC16EF034B00536C2F /* MyCocos2DClass.m */,
+				360142D316EF638000250F4B /* BackGround.h */,
+				360142D416EF638000250F4B /* BackGround.m */,
 			);
 			name = Layers;
 			sourceTree = "<group>";
@@ -374,8 +374,8 @@
 		DCC1A0F813A94ED5005BD75D /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				360142E716F0052D00250F4B /* scrollSample.tmx */,
 				360142CF16EF614000250F4B /* stage1.png */,
-				360142D016EF614000250F4B /* stage1.tmx */,
 				36B006FE16EDE21500BFC01F /* Normal.png */,
 				36B006FF16EDE21500BFC01F /* Parallel.png */,
 				36B0070016EDE21500BFC01F /* Player.png */,
@@ -571,7 +571,7 @@
 				36B0071816EDE21500BFC01F /* Target4.png in Resources */,
 				36B0071A16EDE21500BFC01F /* Threeway.png in Resources */,
 				360142D116EF614000250F4B /* stage1.png in Resources */,
-				360142D216EF614000250F4B /* stage1.tmx in Resources */,
+				360142E816F0052D00250F4B /* scrollSample.tmx in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -626,7 +626,7 @@
 				36B006F816EDE14300BFC01F /* NormalPattern.m in Sources */,
 				36B006FA16EDE14300BFC01F /* ParallelPattern.m in Sources */,
 				36B006FC16EDE14300BFC01F /* ThreeWayPattern.m in Sources */,
-				36C408BD16EF034B00536C2F /* MyCocos2DClass.m in Sources */,
+				360142D516EF638000250F4B /* BackGround.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

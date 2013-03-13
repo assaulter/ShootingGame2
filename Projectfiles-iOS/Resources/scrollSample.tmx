@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="20" height="60" tilewidth="32" tileheight="32">
+ <tileset firstgid="1" name="stage1" tilewidth="32" tileheight="32">
+  <image source="stage1.png" width="128" height="128"/>
+ </tileset>
+ <layer name="map" width="20" height="60">
+  <data encoding="base64" compression="zlib">
+   eJzt2EsKwCAMBNC0NhQK/dz/tJ0DRFGRYtJZvF0YJLMIqCKisBj2DGtWDTPkWTm53NF5JdqQR3Edg2bID+99fvl+77vyonXP7IVq8L79j/c+ed/i4X2jWfs/4YIbno65FRJsUvf3EMkLWwIWng==
+  </data>
+ </layer>
+ <objectgroup name="position" width="20" height="60">
+  <object name="SpawnPoint" x="448" y="1728"/>
+  <object name="BossSpawnPoint" x="320" y="64"/>
+ </objectgroup>
+</map>

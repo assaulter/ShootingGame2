@@ -1,20 +1,19 @@
 //
-//  MyCocos2DClass.m
+//  BackGround.m
 //  ShootingGame
 //
 //  Created by KazukiKubo on 2013/03/12.
 //  Copyright 2013年 __MyCompanyName__. All rights reserved.
 //
 
-#import "MyCocos2DClass.h"
+#import "BackGround.h"
 
-
-@implementation MyCocos2DClass
+@implementation BackGround
 
 -(id)init {
     if (self = [super init]) {
-        self.tileMap = [CCTMXTiledMap tiledMapWithTMXFile:@"stage1.tmx"];
-        self.background =  [_tileMap layerNamed:@"map"];
+        _tileMap = [CCTMXTiledMap tiledMapWithTMXFile:@"scrollSample.tmx"];
+        _map =  [_tileMap layerNamed:@"map"];
         
         [self addChild:_tileMap];
         

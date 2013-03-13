@@ -1,5 +1,5 @@
 //
-//  MyCocos2DClass.h
+//  BackGround.h
 //  ShootingGame
 //
 //  Created by KazukiKubo on 2013/03/12.
@@ -9,12 +9,11 @@
 #import <Foundation/Foundation.h>
 #import "cocos2d.h"
 
-@interface MyCocos2DClass : CCLayer {
+@interface BackGround : CCLayer {
     CGPoint _current;
     CGPoint _move;
+    CCTMXTiledMap *_tileMap;
+    CCTMXLayer *_map;
 }
-
-@property (nonatomic, strong) CCTMXTiledMap *tileMap;
-@property (nonatomic, strong) CCTMXLayer *background;
 
 @end

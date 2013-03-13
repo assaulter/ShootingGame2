@@ -17,9 +17,12 @@
 @implementation GameScene
 
 -(id)init {
-    if (self = [super initWithColor:ccc4(255,255,255,255)]) {
+    if (self = [super init]) {
         _items = [NSMutableArray new];
         _bullets = [NSMutableArray new];
+        // 背景layer
+        _backGround = [[BackGround alloc] init];
+        [self addChild:_backGround z:-1];
         // player関連を持つlayer
         _playerLayer = [[PlayerLayer alloc] init];
         [self addChild:_playerLayer z:0];
