@@ -9,11 +9,12 @@
 #import <Foundation/Foundation.h>
 #import "cocos2d.h"
 
-@interface BackGround : CCLayer {
+@interface BackGroundLayer : CCLayer {
     CGPoint _current;
-    CGPoint _move;
     CCTMXTiledMap *_tileMap;
     CCTMXLayer *_map;
 }
+
+-(CGPoint)getPlayerSpawnPoint;
 
 @end

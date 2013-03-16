@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		360142D116EF614000250F4B /* stage1.png in Resources */ = {isa = PBXBuildFile; fileRef = 360142CF16EF614000250F4B /* stage1.png */; };
-		360142D516EF638000250F4B /* BackGround.m in Sources */ = {isa = PBXBuildFile; fileRef = 360142D416EF638000250F4B /* BackGround.m */; };
+		360142D516EF638000250F4B /* BackGroundLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 360142D416EF638000250F4B /* BackGroundLayer.m */; };
 		360142E816F0052D00250F4B /* scrollSample.tmx in Resources */ = {isa = PBXBuildFile; fileRef = 360142E716F0052D00250F4B /* scrollSample.tmx */; };
 		36B006A516EDDEE800BFC01F /* MainScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 36B006A416EDDEE800BFC01F /* MainScene.m */; };
 		36B006A616EDDEE800BFC01F /* MainScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 36B006A416EDDEE800BFC01F /* MainScene.m */; };
@@ -113,8 +113,8 @@
 
 /* Begin PBXFileReference section */
 		360142CF16EF614000250F4B /* stage1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stage1.png; sourceTree = "<group>"; };
-		360142D316EF638000250F4B /* BackGround.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BackGround.h; sourceTree = "<group>"; };
-		360142D416EF638000250F4B /* BackGround.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BackGround.m; sourceTree = "<group>"; };
+		360142D316EF638000250F4B /* BackGroundLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BackGroundLayer.h; sourceTree = "<group>"; };
+		360142D416EF638000250F4B /* BackGroundLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BackGroundLayer.m; sourceTree = "<group>"; };
 		360142E716F0052D00250F4B /* scrollSample.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = scrollSample.tmx; sourceTree = "<group>"; };
 		36B006A316EDDEE800BFC01F /* MainScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainScene.h; sourceTree = "<group>"; };
 		36B006A416EDDEE800BFC01F /* MainScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainScene.m; sourceTree = "<group>"; };
@@ -287,8 +287,8 @@
 				36B006BF16EDE0E100BFC01F /* PlayerLayer.h */,
 				36B006C016EDE0E100BFC01F /* PlayerLayer.m */,
 				36B006C116EDE0E100BFC01F /* Subject.h */,
-				360142D316EF638000250F4B /* BackGround.h */,
-				360142D416EF638000250F4B /* BackGround.m */,
+				360142D316EF638000250F4B /* BackGroundLayer.h */,
+				360142D416EF638000250F4B /* BackGroundLayer.m */,
 			);
 			name = Layers;
 			sourceTree = "<group>";
@@ -626,7 +626,7 @@
 				36B006F816EDE14300BFC01F /* NormalPattern.m in Sources */,
 				36B006FA16EDE14300BFC01F /* ParallelPattern.m in Sources */,
 				36B006FC16EDE14300BFC01F /* ThreeWayPattern.m in Sources */,
-				360142D516EF638000250F4B /* BackGround.m in Sources */,
+				360142D516EF638000250F4B /* BackGroundLayer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -22,6 +22,7 @@
 @property(nonatomic, strong) Player *player; // player(GameSceneから参照するために)
 @property(nonatomic, strong) NSMutableArray *bullets; // 弾を持つ配列(当たり判定は別クラスでやるので)
 
+-(void)addPlayerWithPoint:(CGPoint)point;
 -(void)setBulletPattern:(NSObject<BulletPattern> *)bulletPattern;
 
 @end

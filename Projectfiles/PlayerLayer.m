@@ -15,18 +15,12 @@
 
 -(id)init {
     if (self = [super init]) {
-        CGSize winSize = [[CCDirector sharedDirector] winSize];
         self.bullets = [NSMutableArray new];
-        self.player = [Player new];
-        CGPoint initPosition = ccp(winSize.width/2, self.player.contentSize.height/2);
-        self.player.position = initPosition;
-        _touchLocation = initPosition;
 
         // bulletPatternを生成
         _bulletPattern = [NormalPattern new];
         _bulletPattern.delegate = self;
-
-        [self addChild:self.player];
+        
         [self schedule:@selector(addBullet:) interval:1.0f];
         [self schedule:@selector(movePlayer:)];
     }
@@ -41,6 +35,16 @@
         self.player.position = ccpAdd(v, self.player.position);
         NSLog(@"player position x %f y %f", self.player.position.x, self.player.position.y);
     }
+}
+
+-(void)addPlayerWithPoint:(CGPoint)point {
+    CGSize winSize = [[CCDirector sharedDirector] winSize];
+    self.player = [Player new];
+    CGPoint initPosition = ccp(winSize.width/2, self.player.contentSize.height/2);
+    self.player.position = initPosition;
+    _touchLocation = initPosition;
+    
+    [self addChild:self.player];
 }
 
 // 実際に弾を撃ってるところ

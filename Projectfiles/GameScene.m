@@ -20,29 +20,39 @@
     if (self = [super init]) {
         _items = [NSMutableArray new];
         _bullets = [NSMutableArray new];
-        // 背景layer
-        _backGround = [[BackGround alloc] init];
-        [self addChild:_backGround z:-1];
-        // player関連を持つlayer
-        _playerLayer = [[PlayerLayer alloc] init];
-        [self addChild:_playerLayer z:0];
-        // item関連を持つlayer
-        _itemLayer = [[ItemLayer alloc] init];
-        [self addChild:_itemLayer z:1];
-        // 敵関連を持つlayer
-        _enemyLayer = [[EnemyLayer alloc] init];
-        [self addChild:_enemyLayer z:2];
-        // ボスを持つlayer
-        _bossLayer = [[BossLayer alloc] init];
-        [self addChild:_bossLayer z:3];
-        // ユーザーの操作を受けるlayer
-        GamePadLayer *gamePadLayer = [[GamePadLayer alloc] init];
-        [gamePadLayer addObserver:_playerLayer];
-        [self addChild:gamePadLayer z:4];
-
+        // 各レイヤーを初期化
+        [self setUpLayers];
+        [self setUpPlayerPosition];
+        
         [self schedule:@selector(update:)];
     }
     return self;
+}
+
+-(void)setUpLayers {
+    // 背景layer
+    _backGround = [[BackGroundLayer alloc] init];
+    [self addChild:_backGround z:-1];
+    // player関連を持つlayer
+    _playerLayer = [[PlayerLayer alloc] init];
+    [self addChild:_playerLayer z:0];
+    // item関連を持つlayer
+    _itemLayer = [[ItemLayer alloc] init];
+    [self addChild:_itemLayer z:1];
+    // 敵関連を持つlayer
+    _enemyLayer = [[EnemyLayer alloc] init];
+    [self addChild:_enemyLayer z:2];
+    // ボスを持つlayer
+    _bossLayer = [[BossLayer alloc] init];
+    [self addChild:_bossLayer z:3];
+    // ユーザーの操作を受けるlayer
+    GamePadLayer *gamePadLayer = [[GamePadLayer alloc] init];
+    [gamePadLayer addObserver:_playerLayer];
+    [self addChild:gamePadLayer z:4];
+}
+
+-(void)setUpPlayerPosition {
+    [_playerLayer addPlayerWithPoint:[_backGround getPlayerSpawnPoint]];
 }
 
 // 今のところ当たり判定君, @param dt : 1/60sec
