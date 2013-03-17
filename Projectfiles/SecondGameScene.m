@@ -8,6 +8,7 @@
 
 #import "SecondGameScene.h"
 #import "GamePadLayer.h"
+#import "MainScene.h"
 
 
 @implementation SecondGameScene
@@ -25,6 +26,7 @@
 
 -(void)setUpLayers {
     _backGroundLayer = [SecondBackGroundLayer new];
+    _backGroundLayer.delegate = self;
     [self addChild:_backGroundLayer z:-1];
     
     _playerLayer = [PlayerLayer new];
@@ -53,19 +55,14 @@
 // 削除用バッファからtagごとに削除を行う。
 -(void)deleteSprites:(NSMutableArray*)sprites {
     for (CCSprite *sprite in sprites) {
-        switch (sprite.tag) {
-            case SpriteTagsBullet:
-                [_playerLayer.bullets removeObject:sprite];
-                [_playerLayer removeChild:sprite cleanup:YES];
-                break;
-            default:
-                break;
-        }
+        [_playerLayer.bullets removeObject:sprite];
+        [_playerLayer removeChild:sprite cleanup:YES];
     }
 }
 
 // 壁との当たり判定
 -(BOOL)collisiondetectWithCGpoint:(CGPoint)point {
+    // isCollided : なんらかの壁に当たっているかどうか
     BOOL isCollided = NO;
     CGPoint tileCoord = [_backGroundLayer tileCoordForPosition:point];
     int tileGid = [_backGroundLayer getEventTileIDWithTileCoord:tileCoord];
@@ -74,6 +71,14 @@
         isCollided = YES;
     }
     return isCollided;
+}
+
+#pragma mark - SecondBackgroundLayerDelegate
+-(void)goToNextStage {
+    [self unschedule:@selector(update:)];
+    
+    CCTransitionFade *tran = [CCTransitionFade transitionWithDuration:1.0 scene:[MainScene nodeWithScene] withColor:ccc3(255, 255, 255)];
+    [[CCDirector sharedDirector]replaceScene:tran];
 }
 
 @end

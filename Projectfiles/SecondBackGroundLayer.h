@@ -9,6 +9,13 @@
 #import <Foundation/Foundation.h>
 #import "cocos2d.h"
 
+@protocol SecondBackGroundLayerDelegate <NSObject>
+
+@required
+-(void)goToNextStage;
+
+@end
+
 @interface SecondBackGroundLayer : CCLayer {
     CGPoint _current;
     CCTMXTiledMap *_tileMap;
@@ -17,6 +24,7 @@
     CCTMXLayer *_foreground;
 }
 
+@property(nonatomic, assign) id<SecondBackGroundLayerDelegate> delegate;
 -(CGPoint)getPlayerSpawnPoint;
 /// マップに対する当たり判定など
 - (CGPoint)tileCoordForPosition:(CGPoint)position;

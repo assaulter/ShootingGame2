@@ -63,9 +63,14 @@
 // 破壊可能なタイルとイベントを削除する。
 -(void)removeTileFromProperties:(NSDictionary*)properties coord:(CGPoint)coord {
     NSString *breakable = properties[@"Breakable"];
+    NSString *goalPoint = properties[@"GoalPoint"];
     if (breakable && [breakable isEqualToString:@"True"]) {
         [_foreground removeTileAt:coord];
         [_event removeTileAt:coord];
+    }
+    
+    if (goalPoint && [goalPoint isEqualToString:@"True"]) {
+        [self.delegate goToNextStage];
     }
 }
 

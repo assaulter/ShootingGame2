@@ -11,7 +11,7 @@
 #import "PlayerLayer.h"
 #import "SecondBackGroundLayer.h"
 
-@interface SecondGameScene : CCLayer {
+@interface SecondGameScene : CCLayer<SecondBackGroundLayerDelegate> {
     PlayerLayer* _playerLayer;
     SecondBackGroundLayer* _backGroundLayer;
     CGPoint _touchLocation;
