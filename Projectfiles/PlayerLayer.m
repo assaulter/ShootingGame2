@@ -10,6 +10,7 @@
 // TODO: 次は弾のインタフェースを作ろう
 #import "BulletNormal.h"
 #import "NormalPattern.h" // デフォルトの発射パターン
+#import "SimpleAudioEngine.h"
 
 @implementation PlayerLayer
 
@@ -20,11 +21,38 @@
         // bulletPatternを生成
         _bulletPattern = [NormalPattern new];
         _bulletPattern.delegate = self;
+        // 死亡時のアニメーションをセットアップ
+        _dieAnimation = [self setUpAnimation];
+        
+        [[SimpleAudioEngine sharedEngine] preloadEffect:@"nc30644.wav"];
         
         [self schedule:@selector(addBullet:) interval:1.0f];
         [self schedule:@selector(movePlayer:)];
     }
     return self;
+}
+
+-(CCAnimation*)setUpAnimation {
+    // 死んだ時用画像を準備
+    [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:@"explosion_default.plist"];
+    CCSpriteBatchNode *spriteSheet = [CCSpriteBatchNode batchNodeWithFile:@"explosion_default.png"];
+    [self addChild:spriteSheet];
+    // TODO:たしかccArrayとかを使ったほうが早いはず
+    NSMutableArray *frames = [NSMutableArray new];
+    for (int i = 1; i <= 10; i++) {
+        [frames addObject:[[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:[NSString stringWithFormat:@"explosion%d.png", i]]];
+    }
+
+    return [CCAnimation animationWithSpriteFrames:frames delay:0.1f];
+}
+
+-(void)execDieAnimation {
+    CCSprite *explosion = [CCSprite spriteWithSpriteFrameName:@"explosion1.png"];
+    explosion.position = self.player.position;
+    CCAction* dieAciton = [CCRepeat actionWithAction:[CCAnimate actionWithAnimation:_dieAnimation] times:1];
+    [[SimpleAudioEngine sharedEngine] playEffect:@"nc30644.wav"];
+    [explosion runAction:dieAciton];
+    [self addChild:explosion];
 }
 
 // プレイヤーをtouchした位置に移動させる(runActionを使わないバージョン)

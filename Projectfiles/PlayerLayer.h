@@ -17,6 +17,7 @@
     NSObject<BulletPattern> *_bulletPattern;
     CGPoint _touchLocation;
     BOOL _isTouches;
+    CCAnimation *_dieAnimation;
 }
 
 @property(nonatomic, strong) Player *player; // player(GameSceneから参照するために)
@@ -24,5 +25,6 @@
 
 -(void)addPlayerWithPoint:(CGPoint)point;
 -(void)setBulletPattern:(NSObject<BulletPattern> *)bulletPattern;
+-(void)execDieAnimation;
 
 @end

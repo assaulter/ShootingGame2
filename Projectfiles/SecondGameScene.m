@@ -96,6 +96,7 @@
 }
 
 -(void)goToGameOverScene {
+    [_playerLayer execDieAnimation];
     [[SimpleAudioEngine sharedEngine] stopBackgroundMusic];
     [self unschedule:@selector(update:)];
     
