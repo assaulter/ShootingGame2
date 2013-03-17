@@ -8,6 +8,8 @@
 
 #import "BossLayer.h"
 
+static int const LIFE_POINT = 10;
+
 /// Boss専用レイヤー(おそらくplayerと同列のため)
 @implementation BossLayer
 
@@ -15,6 +17,7 @@
     if (self = [super init]) {
         self.bullets = [NSMutableArray new];
         _isActive = NO;
+        self.bossLifePoint = LIFE_POINT;
     }
     return self;
 }
@@ -27,6 +30,13 @@
         [self addChild:self.boss];
         
         _isActive = YES;
+    }
+}
+
+-(void)reduceLifePoint {
+    self.bossLifePoint--;
+    if (self.bossLifePoint < 0) {
+        [self.delegate goToNextStage];
     }
 }
 

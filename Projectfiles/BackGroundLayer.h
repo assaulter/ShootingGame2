@@ -21,7 +21,6 @@
     CCTMXTiledMap *_tileMap;
     CCTMXLayer *_map;
     CCTMXLayer *_event;
-    NSMutableDictionary *_actions;
     BOOL _isMovable;
 }
 

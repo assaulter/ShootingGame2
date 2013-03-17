@@ -71,6 +71,10 @@
 		36B0071A16EDE21500BFC01F /* Threeway.png in Resources */ = {isa = PBXBuildFile; fileRef = 36B0070716EDE21500BFC01F /* Threeway.png */; };
 		36B0071B16EDE21500BFC01F /* Threeway.png in Resources */ = {isa = PBXBuildFile; fileRef = 36B0070716EDE21500BFC01F /* Threeway.png */; };
 		36F02BF416F4B3070005E3CF /* meta_tiles.png in Resources */ = {isa = PBXBuildFile; fileRef = 36F02BF316F4B3060005E3CF /* meta_tiles.png */; };
+		36F02BFD16F5AA9B0005E3CF /* SecondGameScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 36F02BFC16F5AA9A0005E3CF /* SecondGameScene.m */; };
+		36F02C0016F5ACB90005E3CF /* SecondBackGroundLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 36F02BFF16F5ACB90005E3CF /* SecondBackGroundLayer.m */; };
+		36F02C0216F5B6280005E3CF /* dg_grounds32.png in Resources */ = {isa = PBXBuildFile; fileRef = 36F02C0116F5B6280005E3CF /* dg_grounds32.png */; };
+		36F02C0416F5B8E70005E3CF /* secondStage.tmx in Resources */ = {isa = PBXBuildFile; fileRef = 36F02C0316F5B8E70005E3CF /* secondStage.tmx */; };
 		DC21B88B1511078F00FD4891 /* fps_images-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = DC21B8881511078F00FD4891 /* fps_images-hd.png */; };
 		DC21B88C1511078F00FD4891 /* fps_images-ipadhd.png in Resources */ = {isa = PBXBuildFile; fileRef = DC21B8891511078F00FD4891 /* fps_images-ipadhd.png */; };
 		DC21B88D1511078F00FD4891 /* fps_images.png in Resources */ = {isa = PBXBuildFile; fileRef = DC21B88A1511078F00FD4891 /* fps_images.png */; };
@@ -171,6 +175,12 @@
 		36B0070616EDE21500BFC01F /* Target4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Target4.png; sourceTree = "<group>"; };
 		36B0070716EDE21500BFC01F /* Threeway.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Threeway.png; sourceTree = "<group>"; };
 		36F02BF316F4B3060005E3CF /* meta_tiles.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = meta_tiles.png; sourceTree = "<group>"; };
+		36F02BFB16F5AA9A0005E3CF /* SecondGameScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecondGameScene.h; sourceTree = "<group>"; };
+		36F02BFC16F5AA9A0005E3CF /* SecondGameScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecondGameScene.m; sourceTree = "<group>"; };
+		36F02BFE16F5ACB80005E3CF /* SecondBackGroundLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecondBackGroundLayer.h; sourceTree = "<group>"; };
+		36F02BFF16F5ACB90005E3CF /* SecondBackGroundLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecondBackGroundLayer.m; sourceTree = "<group>"; };
+		36F02C0116F5B6280005E3CF /* dg_grounds32.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dg_grounds32.png; sourceTree = "<group>"; };
+		36F02C0316F5B8E70005E3CF /* secondStage.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = secondStage.tmx; sourceTree = "<group>"; };
 		DC21B8881511078F00FD4891 /* fps_images-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "fps_images-hd.png"; sourceTree = "<group>"; };
 		DC21B8891511078F00FD4891 /* fps_images-ipadhd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "fps_images-ipadhd.png"; sourceTree = "<group>"; };
 		DC21B88A1511078F00FD4891 /* fps_images.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fps_images.png; sourceTree = "<group>"; };
@@ -268,6 +278,8 @@
 				36B006AA16EDE08B00BFC01F /* GameScene.m */,
 				36B006A316EDDEE800BFC01F /* MainScene.h */,
 				36B006A416EDDEE800BFC01F /* MainScene.m */,
+				36F02BFB16F5AA9A0005E3CF /* SecondGameScene.h */,
+				36F02BFC16F5AA9A0005E3CF /* SecondGameScene.m */,
 			);
 			name = Scenes;
 			sourceTree = "<group>";
@@ -291,6 +303,8 @@
 				36B006C116EDE0E100BFC01F /* Subject.h */,
 				360142D316EF638000250F4B /* BackGroundLayer.h */,
 				360142D416EF638000250F4B /* BackGroundLayer.m */,
+				36F02BFE16F5ACB80005E3CF /* SecondBackGroundLayer.h */,
+				36F02BFF16F5ACB90005E3CF /* SecondBackGroundLayer.m */,
 			);
 			name = Layers;
 			sourceTree = "<group>";
@@ -383,6 +397,8 @@
 		DCC1A0F813A94ED5005BD75D /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				36F02C0316F5B8E70005E3CF /* secondStage.tmx */,
+				36F02C0116F5B6280005E3CF /* dg_grounds32.png */,
 				360142E716F0052D00250F4B /* scrollSample.tmx */,
 				36F02BF316F4B3060005E3CF /* meta_tiles.png */,
 				360142CF16EF614000250F4B /* stage1.png */,
@@ -584,6 +600,8 @@
 				360142D116EF614000250F4B /* stage1.png in Resources */,
 				360142E816F0052D00250F4B /* scrollSample.tmx in Resources */,
 				36F02BF416F4B3070005E3CF /* meta_tiles.png in Resources */,
+				36F02C0216F5B6280005E3CF /* dg_grounds32.png in Resources */,
+				36F02C0416F5B8E70005E3CF /* secondStage.tmx in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -639,6 +657,8 @@
 				36B006FA16EDE14300BFC01F /* ParallelPattern.m in Sources */,
 				36B006FC16EDE14300BFC01F /* ThreeWayPattern.m in Sources */,
 				360142D516EF638000250F4B /* BackGroundLayer.m in Sources */,
+				36F02BFD16F5AA9B0005E3CF /* SecondGameScene.m in Sources */,
+				36F02C0016F5ACB90005E3CF /* SecondBackGroundLayer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

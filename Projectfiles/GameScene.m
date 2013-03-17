@@ -45,6 +45,7 @@
     [self addChild:_enemyLayer z:2];
     // ボスを持つlayer
     _bossLayer = [[BossLayer alloc] init];
+    _bossLayer.delegate = self;
     [self addChild:_bossLayer z:3];
     // ユーザーの操作を受けるlayer
     GamePadLayer *gamePadLayer = [[GamePadLayer alloc] init];
@@ -80,8 +81,11 @@
     }
     // bossとの当たり判定
     Boss *boss = _bossLayer.boss;
-    if ([boss intersectsNode:player]) {
-        [self goToGameOverScene];
+    for (CCSprite* bullet in _playerLayer.bullets) {
+        if ([boss intersectsNode:bullet]) {
+            [spritesToDelete addObject:bullet];
+            [_bossLayer reduceLifePoint];
+        }
     }
     // あたったやつは削除
     [self deleteSprites:spritesToDelete];
@@ -125,14 +129,6 @@
     }
 }
 
-// 次のステージへ移動する。
--(void)goToNextStage {
-    [self unschedule:@selector(update:)];
-    
-    CCTransitionFade *tran = [CCTransitionFade transitionWithDuration:1.0 scene:[NextStage nodeWithScene] withColor:ccc3(255, 255, 255)];
-    [[CCDirector sharedDirector]replaceScene:tran];
-}
-
 -(void)goToGameOverScene {
     [self unschedule:@selector(update:)];
     
@@ -143,6 +139,14 @@
 #pragma mark - BackGroundLayerDelegateMethod
 -(void)addBossWithPoint:(CGPoint)point {
     [_bossLayer addBossWithPoint:point];
+}
+
+#pragma mark - BossLayerDelegate
+-(void)goToNextStage {
+    [self unschedule:@selector(update:)];
+    
+    CCTransitionFade *tran = [CCTransitionFade transitionWithDuration:1.0 scene:[NextStage nodeWithScene] withColor:ccc3(255, 255, 255)];
+    [[CCDirector sharedDirector]replaceScene:tran];
 }
 
 @end

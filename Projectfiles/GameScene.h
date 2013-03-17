@@ -15,7 +15,7 @@
 #import "BossLayer.h"
 #import "BackGroundLayer.h"
 
-@interface GameScene : CCLayer<BackGroundLayerDelegate> {
+@interface GameScene : CCLayer<BackGroundLayerDelegate, BossLayerDelegate> {
     PlayerLayer *_playerLayer;
     ItemLayer *_itemLayer;
     EnemyLayer *_enemyLayer;

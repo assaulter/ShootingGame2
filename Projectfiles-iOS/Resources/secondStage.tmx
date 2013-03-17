@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="20" height="30" tilewidth="32" tileheight="32">
+ <tileset firstgid="1" name="dg_grounds32" tilewidth="32" tileheight="32">
+  <image source="dg_grounds32.png" width="288" height="608"/>
+ </tileset>
+ <tileset firstgid="172" name="meta_tiles" tilewidth="32" tileheight="32">
+  <image source="meta_tiles.png" width="67" height="34"/>
+  <tile id="0">
+   <properties>
+    <property name="isBreakable" value="false"/>
+   </properties>
+  </tile>
+  <tile id="1">
+   <properties>
+    <property name="isBreakable" value="true"/>
+   </properties>
+  </tile>
+ </tileset>
+ <layer name="background" width="20" height="30">
+  <data encoding="base64" compression="zlib">
+   eJztlLERwDAIA6kZ2AN48jQufJwJApRLihTq8AMCoyKiS2NJAyExlhm9QXPv8XOJUaduPI9Z5TH7zvoe5c8ykZ6Ynnd4DF9tfex5MXnsWT/B6nLHQcgeeHEIK+NPhXXH7O4H8t77g979yHhvWdl7PQ+q3KHqnKuevsH69T1dAtFCnQ==
+  </data>
+ </layer>
+ <objectgroup name="position" width="20" height="30">
+  <object name="PlayerSpawnPoint" x="96" y="928"/>
+ </objectgroup>
+ <layer name="event" width="20" height="30">
+  <data encoding="base64" compression="zlib">
+   eJxjYECANVBMCBCjBt1MQnqItZsUN5BiHrXsJMfMoWIuLdxJSzAUwpVW8U8poLYfqWXuGiyYWD3EmEeKOwiZRyrApofS9EGrcmAgyxdyw5Za7qam3wdr/h8F1AEAvfgmTQ==
+  </data>
+ </layer>
+</map>
