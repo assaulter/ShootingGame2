@@ -12,10 +12,12 @@
 #import "Boss.h"
 
 @interface BossLayer : CCLayer {
-    
+    BOOL _isActive;
 }
 
 @property(nonatomic, strong) Boss *boss; // player(GameSceneから参照するために)
 @property(nonatomic, strong) NSMutableArray *bullets; // 弾を持つ配列(当たり判定は別クラスでやるので)
+
+-(void)addBossWithPoint:(CGPoint)point;
 
 @end

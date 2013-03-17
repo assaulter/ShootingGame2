@@ -38,11 +38,9 @@
 }
 
 -(void)addPlayerWithPoint:(CGPoint)point {
-    CGSize winSize = [[CCDirector sharedDirector] winSize];
     self.player = [Player new];
-    CGPoint initPosition = ccp(winSize.width/2, self.player.contentSize.height/2);
-    self.player.position = initPosition;
-    _touchLocation = initPosition;
+    self.player.position = point;
+    _touchLocation = point;
     
     [self addChild:self.player];
 }

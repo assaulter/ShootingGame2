@@ -9,12 +9,23 @@
 #import <Foundation/Foundation.h>
 #import "cocos2d.h"
 
+@protocol BackGroundLayerDelegate <NSObject>
+
+@required
+-(void)addBossWithPoint:(CGPoint)point;
+@end
+
+
 @interface BackGroundLayer : CCLayer {
     CGPoint _current;
     CCTMXTiledMap *_tileMap;
     CCTMXLayer *_map;
+    CCTMXLayer *_event;
+    NSMutableDictionary *_actions;
+    BOOL _isMovable;
 }
 
+@property (nonatomic,assign) id<BackGroundLayerDelegate> delegate;
 -(CGPoint)getPlayerSpawnPoint;
-
+-(CGPoint)convertToBasicLayerPoint:(CGPoint)point;
 @end

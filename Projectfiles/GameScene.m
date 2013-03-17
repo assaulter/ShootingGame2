@@ -32,6 +32,7 @@
 -(void)setUpLayers {
     // 背景layer
     _backGround = [[BackGroundLayer alloc] init];
+    _backGround.delegate = self;
     [self addChild:_backGround z:-1];
     // player関連を持つlayer
     _playerLayer = [[PlayerLayer alloc] init];
@@ -137,6 +138,11 @@
     
     CCTransitionFade *tran = [CCTransitionFade transitionWithDuration:1.0 scene:[GameOverScene nodeWithScene] withColor:ccc3(255, 255, 255)];
     [[CCDirector sharedDirector]replaceScene:tran];
+}
+
+#pragma mark - BackGroundLayerDelegateMethod
+-(void)addBossWithPoint:(CGPoint)point {
+    [_bossLayer addBossWithPoint:point];
 }
 
 @end

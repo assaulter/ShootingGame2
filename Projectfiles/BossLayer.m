@@ -13,15 +13,21 @@
 
 -(id)init {
     if (self = [super init]) {
-        CGSize winSize = [[CCDirector sharedDirector] winSize];
         self.bullets = [NSMutableArray new];
-//        self.boss = [[Boss alloc] initWithFile:@"Target4.png" lifePoint:10];
-        self.boss = [Boss new];
-        self.boss.position = ccp(winSize.width/2, winSize.height - self.boss.contentSize.height/2);
-        
-        [self addChild:self.boss];
+        _isActive = NO;
     }
     return self;
+}
+
+/// pointにボスを登場させる
+-(void)addBossWithPoint:(CGPoint)point {
+    if (!_isActive) {
+        self.boss = [Boss new];
+        self.boss.position = point;
+        [self addChild:self.boss];
+        
+        _isActive = YES;
+    }
 }
 
 @end
