@@ -7,26 +7,31 @@
   <image source="meta_tiles.png" width="67" height="34"/>
   <tile id="0">
    <properties>
-    <property name="isBreakable" value="false"/>
+    <property name="Breakable" value="False"/>
    </properties>
   </tile>
   <tile id="1">
    <properties>
-    <property name="isBreakable" value="true"/>
+    <property name="Breakable" value="True"/>
    </properties>
   </tile>
  </tileset>
  <layer name="background" width="20" height="30">
   <data encoding="base64" compression="zlib">
-   eJztlLERwDAIA6kZ2AN48jQufJwJApRLihTq8AMCoyKiS2NJAyExlhm9QXPv8XOJUaduPI9Z5TH7zvoe5c8ykZ6Ynnd4DF9tfex5MXnsWT/B6nLHQcgeeHEIK+NPhXXH7O4H8t77g979yHhvWdl7PQ+q3KHqnKuevsH69T1dAtFCnQ==
+   eJztlDkOACAIBKl5MO+3sTJGriWBxGI6HWAxMhHxRjasYDlzOrU71tqeHjw+VM2Ic4q3os9KJuRatf9O2QnQKxcyGXtd2hwR18uZfR+Z+8gZkf91NNvMbpA7qXJ9+rEAw2IwVQ==
   </data>
  </layer>
  <objectgroup name="position" width="20" height="30">
   <object name="PlayerSpawnPoint" x="96" y="928"/>
  </objectgroup>
+ <layer name="foreground" width="20" height="30">
+  <data encoding="base64" compression="zlib">
+   eJxjYBi6oAmKqW0etcyktvvIdQO1zRsKYT5YzaMlGApupBcYSvE20ABfWJETfrjMIyc+mrBgcs0aBaOA3gAATggTzw==
+  </data>
+ </layer>
  <layer name="event" width="20" height="30">
   <data encoding="base64" compression="zlib">
-   eJxjYECANVBMCBCjBt1MQnqItZsUN5BiHrXsJMfMoWIuLdxJSzAUwpVW8U8poLYfqWXuGiyYWD3EmEeKOwiZRyrApofS9EGrcmAgyxdyw5Za7qam3wdr/h8F1AEAvfgmTQ==
+   eJztlEsOgDAIBbn/Wcod3dRoCL8HNHHhJOxgaqFC9LB2RGRypDOqyZ79zucdXg4Ck++s+jzQe2e5vdH5qDNzJ4So5x3fRF/l903Pa9I3PesTrq53KaEh34GVl3FZdZEPRavpvo9MvfUPWvsD6b10ofualajsoeqcPdcEp/b/zze4ALBRQgA=
   </data>
  </layer>
 </map>

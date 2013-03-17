@@ -18,8 +18,6 @@
 
 -(id)init {
     if (self = [super init]) {
-        _items = [NSMutableArray new];
-        _bullets = [NSMutableArray new];
         // 各レイヤーを初期化
         [self setUpLayers];
         [self setUpPlayerPosition];

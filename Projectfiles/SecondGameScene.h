@@ -14,7 +14,6 @@
 @interface SecondGameScene : CCLayer {
     PlayerLayer* _playerLayer;
     SecondBackGroundLayer* _backGroundLayer;
-    NSMutableArray *_bullets;
     CGPoint _touchLocation;
 }
 

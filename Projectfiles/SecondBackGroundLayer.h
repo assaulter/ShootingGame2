@@ -18,5 +18,9 @@
 }
 
 -(CGPoint)getPlayerSpawnPoint;
+/// マップに対する当たり判定など
+- (CGPoint)tileCoordForPosition:(CGPoint)position;
+-(int)getEventTileIDWithTileCoord:(CGPoint)coord;
+-(void)removeTileWithTileCoord:(CGPoint)coord tileGid:(int)tileGid;
 
 @end
