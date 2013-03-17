@@ -13,18 +13,26 @@
 #import "ThreeWayPattern.h"
 #import "NextStage.h"
 #import "GameOverScene.h"
+#import "SimpleAudioEngine.h"
 
 @implementation GameScene
 
 -(id)init {
     if (self = [super init]) {
         // 各レイヤーを初期化
+        [self setUpMusic];
         [self setUpLayers];
         [self setUpPlayerPosition];
         
         [self schedule:@selector(update:)];
     }
     return self;
+}
+
+-(void)setUpMusic {
+    [[SimpleAudioEngine sharedEngine] preloadEffect:@"hit.caf"];
+    [[SimpleAudioEngine sharedEngine] preloadEffect:@"pickup.caf"];
+    [[SimpleAudioEngine sharedEngine] playBackgroundMusic:@"TileMap.caf"];
 }
 
 -(void)setUpLayers {
@@ -62,6 +70,7 @@
     // itemとplayerの当たり判定
     for (Item *item in _itemLayer.items) {
         if ([player intersectsNode:item]) {
+            [[SimpleAudioEngine sharedEngine] playEffect:@"pickup.caf"];            
             [spritesToDelete addObject:item];
             // playerの状態を変化させる。
             [self changeBulletPattern:item.type];
@@ -71,6 +80,7 @@
     for (CCSprite *enemy in _enemyLayer.enemies) {
         for (CCSprite *bullet in _playerLayer.bullets) {
             if ([enemy intersectsNode:bullet]) {
+                [[SimpleAudioEngine sharedEngine] playEffect:@"hit.caf"];
                 [spritesToDelete addObject:enemy];
                 [spritesToDelete addObject:bullet];
                 [_itemLayer addItemWithEnemyPosition:enemy.position];
@@ -142,6 +152,7 @@
 #pragma mark - BossLayerDelegate
 -(void)goToNextStage {
     [self unschedule:@selector(update:)];
+    [[SimpleAudioEngine sharedEngine] stopBackgroundMusic];
     
     CCTransitionFade *tran = [CCTransitionFade transitionWithDuration:1.0 scene:[NextStage nodeWithScene] withColor:ccc3(255, 255, 255)];
     [[CCDirector sharedDirector]replaceScene:tran];

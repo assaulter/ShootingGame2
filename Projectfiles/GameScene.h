@@ -21,8 +21,6 @@
     EnemyLayer *_enemyLayer;
     BossLayer *_bossLayer;
     BackGroundLayer *_backGround;
-//    NSMutableArray *_items;
-//    NSMutableArray *_bullets;
     CGPoint _touchLocation;
 }
 

@@ -9,7 +9,8 @@
 #import "SecondGameScene.h"
 #import "GamePadLayer.h"
 #import "MainScene.h"
-
+#import "GameOverScene.h"
+#import "SimpleAudioEngine.h"
 
 @implementation SecondGameScene
 
@@ -17,11 +18,18 @@
     if (self = [super init]) {
         // 各レイヤーを初期化
         [self setUpLayers];
+        [self setUpMusic];
         [self setUpPlayerPosition];
         
         [self schedule:@selector(update:)];
     }
     return self;
+}
+
+-(void)setUpMusic {
+    [[SimpleAudioEngine sharedEngine] preloadEffect:@"hit.caf"];
+    [[SimpleAudioEngine sharedEngine] preloadEffect:@"pickup.caf"];
+    [[SimpleAudioEngine sharedEngine] playBackgroundMusic:@"TileMap.caf"];
 }
 
 -(void)setUpLayers {
@@ -46,10 +54,17 @@
     // bulletとの当たり判定を行う
     for (CCSprite* bullet in _playerLayer.bullets) {
         if ([self collisiondetectWithCGpoint:bullet.position]) {
+            [[SimpleAudioEngine sharedEngine] playEffect:@"hit.caf"];
             [spritesToDelete addObject:bullet];
         }
     }
     [self deleteSprites:spritesToDelete];
+    
+    // playerとの当たり判定を行う
+    CGPoint point = _playerLayer.player.position;
+    if ([self isCollisioningWithCGPoint:point]) {
+        [self goToGameOverScene];
+    }
 }
 
 // 削除用バッファからtagごとに削除を行う。
@@ -73,8 +88,24 @@
     return isCollided;
 }
 
+// 当たっているかどうかだけを返す
+-(BOOL)isCollisioningWithCGPoint:(CGPoint)point {
+    CGPoint tileCood = [_backGroundLayer tileCoordForPosition:point];
+    int tileGid = [_backGroundLayer getEventTileIDWithTileCoord:tileCood];
+    return tileGid > 0;
+}
+
+-(void)goToGameOverScene {
+    [[SimpleAudioEngine sharedEngine] stopBackgroundMusic];
+    [self unschedule:@selector(update:)];
+    
+    CCTransitionFade *tran = [CCTransitionFade transitionWithDuration:1.0 scene:[GameOverScene nodeWithScene] withColor:ccc3(255, 255, 255)];
+    [[CCDirector sharedDirector]replaceScene:tran];
+}
+
 #pragma mark - SecondBackgroundLayerDelegate
 -(void)goToNextStage {
+    [[SimpleAudioEngine sharedEngine] stopBackgroundMusic];
     [self unschedule:@selector(update:)];
     
     CCTransitionFade *tran = [CCTransitionFade transitionWithDuration:1.0 scene:[MainScene nodeWithScene] withColor:ccc3(255, 255, 255)];
