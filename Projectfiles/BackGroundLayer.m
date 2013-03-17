@@ -42,9 +42,6 @@ static float const SCROLL_Y = 1.0f;
 }
 
 -(void)update:(ccTime)delta {
-//    CCMoveTo* moveTo = [CCMoveTo actionWithDuration:delta position:_current];
-//    CCEaseIn* ease = [CCEaseIn actionWithAction:moveTo rate:0.0f];
-//    [self runAction:ease];
     if (_isMovable) {
         [self moveBackGround:delta];
     }
@@ -77,26 +74,6 @@ static float const SCROLL_Y = 1.0f;
 	y = fminf(fmaxf(y, 0), _tileMap.mapSize.height - 1);
 
     return ccp(x, y);
-}
-
--(CGPoint) tilePosFromLocation:(CGPoint)location {
-	// Tilemap position must be added as an offset, in case the tilemap position is not at 0,0 due to scrolling
-	CGPoint pos = ccpSub(location, _tileMap.position);
-	
-	// scaling tileSize to Retina display size if necessary
-	float scaledWidth = _tileMap.tileSize.width / CC_CONTENT_SCALE_FACTOR();
-	float scaledHeight = _tileMap.tileSize.height / CC_CONTENT_SCALE_FACTOR();
-	// Cast to int makes sure that result is in whole numbers, tile coordinates will be used as array indices
-	pos.x = (int)(pos.x / scaledWidth);
-	pos.y = (int)((_tileMap.mapSize.height * _tileMap.tileSize.height - pos.y) / scaledHeight);
-	
-	CCLOG(@"touch at (%.0f, %.0f) is at tileCoord (%i, %i)", location.x, location.y, (int)pos.x, (int)pos.y);
-	
-	// make sure coordinates are within bounds
-	pos.x = fminf(fmaxf(pos.x, 0), _tileMap.mapSize.width - 1);
-	pos.y = fminf(fmaxf(pos.y, 0), _tileMap.mapSize.height - 1);
-	
-	return pos;
 }
 
 @end
