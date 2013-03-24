@@ -7,7 +7,6 @@
 //
 
 #import "PlayerLayer.h"
-// TODO: 次は弾のインタフェースを作ろう
 #import "BulletNormal.h"
 #import "NormalPattern.h" // デフォルトの発射パターン
 #import "SimpleAudioEngine.h"
